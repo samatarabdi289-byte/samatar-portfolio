@@ -549,7 +549,9 @@
       color: #16A34A;
     }
 
-    /* ===== HERO IMAGE - RECTANGLE STYLE ===== */
+    /* ============================================================
+       HERO IMAGE - ISKU CABIR DARK & LIGHT
+       ============================================================ */
     .hero-image {
       display: flex;
       justify-content: center;
@@ -567,9 +569,10 @@
       }
     }
 
+    /* ISKU CABIR DARK IYO LIGHT - WAX LAGA BEDELAY */
     .profile-rectangle {
       width: 100%;
-      max-width: 380px;
+      max-width: 380px;   /* Isku mid dark & light */
       aspect-ratio: 4 / 5;
       border-radius: 22px;
       background: linear-gradient(145deg, #0D1B14, #0B1812);
@@ -583,6 +586,7 @@
       justify-content: center;
       padding: 10px;
       animation: borderGlow 4s ease-in-out infinite alternate;
+      min-width: 200px;  /* Si uusan hoos u dhicin */
     }
 
     @keyframes borderGlow {
@@ -590,8 +594,10 @@
       100% { border-color: rgba(34, 197, 94, 0.5); box-shadow: 0 30px 60px -10px rgba(34, 197, 94, 0.4); }
     }
 
+    /* LIGHT MODE - ISKU CABIR DARK MODE */
     body.light .profile-rectangle {
-      max-width: 380px;
+      max-width: 380px;   /* Isku mid dark mode */
+      min-width: 200px;
       background: linear-gradient(145deg, #ffffff, #f0f5f2);
       border-color: rgba(22, 163, 74, 0.2);
       box-shadow: 0 30px 60px -20px rgba(22, 163, 74, 0.15);
@@ -1328,7 +1334,7 @@
     }
 
     /* ============================================================
-       RESPONSIVE
+       RESPONSIVE - ISKU CABIR IMAGE LABADA MODE
        ============================================================ */
 
     @media (max-width: 992px) {
@@ -1358,9 +1364,12 @@
         grid-template-columns: 1fr;
       }
 
+      /* ISKU CABIR TABLET */
       .profile-rectangle {
-        max-width: 320px;
-        margin: 0 auto;
+        max-width: 340px;
+      }
+      body.light .profile-rectangle {
+        max-width: 340px;
       }
 
       .hero-text h1 {
@@ -1429,9 +1438,13 @@
         grid-template-columns: 1fr 1fr;
       }
 
+      /* ISKU CABIR MOBILE */
       .profile-rectangle {
-        max-width: 280px;
+        max-width: 320px;
         padding: 8px;
+      }
+      body.light .profile-rectangle {
+        max-width: 320px;
       }
 
       .hero-image {
@@ -1471,10 +1484,14 @@
         font-size: 0.95rem;
       }
 
+      /* ISKU CABIR MOBILE YAR */
       .profile-rectangle {
-        max-width: 220px;
+        max-width: 260px;
         padding: 6px;
         aspect-ratio: 4 / 5;
+      }
+      body.light .profile-rectangle {
+        max-width: 260px;
       }
 
       .btn {
@@ -2141,17 +2158,6 @@
       function toggleMenu() {
         hamburger.classList.toggle('active');
         navLinks.classList.toggle('open');
-        // Change hamburger to X when open
-        const spans = hamburger.querySelectorAll('span');
-        if (navLinks.classList.contains('open')) {
-          spans[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
-          spans[1].style.opacity = '0';
-          spans[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
-        } else {
-          spans[0].style.transform = 'none';
-          spans[1].style.opacity = '1';
-          spans[2].style.transform = 'none';
-        }
       }
 
       hamburger.addEventListener('click', function(e) {
